@@ -1,0 +1,89 @@
+
+
+// determine the dot product with a procedure 
+PROCEDURE dot_product(Var ps :INTEGER,v1,v2: ARRAY_OF INTEGER;)
+
+
+VAR
+   i,j:INTEGER;
+
+BEGIN
+ Write(write the elments of the array v1)
+ Read(v1[i])
+  Write(write the elments of the array v1)
+ Read(v2[j])
+
+// calculate the dot product ps 
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        FOR j FROM 0 TO v2.length-1 STEP 1 DO
+            ps := ps + v1[i]*v2[j];
+        END_FOR
+    END_FOR
+END
+
+
+
+
+ALGORITHM procedure dot_product
+
+VAR
+    v1,v2: ARRAY_OF INTEGER;
+    ps:INTEGER;
+BEGIN
+ Read (ps);
+ Read (v1);
+ Read (v2);
+
+// read the dot product ps 
+ps:= dot_product()
+    IF (ps:=0) THEN
+        write(v1 and v2 are orthogonal);
+    
+    ELSE
+       write(v1 and v2 are not orthogonal);
+    
+    END_IF
+END
+
+// determine the dot product with function 
+
+FUNCTION dot_product() : INTEGER
+
+VAR
+
+  i,j,ps:INTEGER;
+  v1,v2: ARRAY_OF INTEGER;
+    
+BEGIN
+
+   FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        FOR j FROM 0 TO v2.length-1 STEP 1 DO
+            ps := ps + v1[i]*v2[j];
+        END_FOR
+    END_FOR
+    
+    RETURN ps ;
+END
+
+
+ALGORITHM function dot_product
+
+VAR
+    v1,v2: ARRAY_OF INTEGER;
+    ps:INTEGER;
+BEGIN
+ Read (ps)
+ Read (v1)
+ Read (v2)
+
+// read the dot product ps 
+ps:= dot_product()
+    IF (ps:=0) THEN
+        write(v1 and v2 are orthogonal);
+    
+    ELSE
+       write(v1 and v2 are not orthogonal);
+    
+    END_IF
+END
+
