@@ -1,38 +1,37 @@
 
 
 // determine the dot product with a procedure 
-PROCEDURE dot_product(Var ps :INTEGER,v1,v2: ARRAY_OF INTEGER;)
+PROCEDURE dot_product(Var ps :INTEGER, v1,v2: ARRAY_OF INTEGER[50])
 
 
 VAR
-   i,j:INTEGER;
+
+  v1,v2: ARRAY_OF INTEGER[50]; 
+  i,j,ps :INTEGER;
 
 BEGIN
- Write(write the elments of the array v1)
- Read(v1[i])
-  Write(write the elments of the array v1)
- Read(v2[j])
+ Write(write the elements of the array v1);
+ Read(v1[i]);
+  Write(write the elements of the array v1);
+ Read(v2[j]);
+ Read(ps);
 
 // calculate the dot product ps 
-    FOR i FROM 0 TO v1.length-1 STEP 1  DO
-        FOR j FROM 0 TO v2.length-1 STEP 1 DO
-            ps := ps + v1[i]*v2[j];
-        END_FOR
-    END_FOR
-END
 
-
+REPEAT
+   ps := ps + v1[i]*v2[j];
+UNTIL (i>50 and j>50)
 
 
 ALGORITHM procedure dot_product
 
 VAR
-    v1,v2: ARRAY_OF INTEGER;
-    ps:INTEGER;
+    v1,v2: ARRAY_OF INTEGER[50];
+    i,j,ps:INTEGER;
 BEGIN
  Read (ps);
- Read (v1);
- Read (v2);
+ Read (v1[i]);
+ Read (v2[j]);
 
 // read the dot product ps 
 ps:= dot_product()
@@ -51,16 +50,18 @@ FUNCTION dot_product() : INTEGER
 
 VAR
 
+
   i,j,ps:INTEGER;
-  v1,v2: ARRAY_OF INTEGER;
+  v1,v2: ARRAY_OF INTEGER[50];
     
 BEGIN
+ Read (ps);
+ Read (v1[i]);
+ Read (v2[j]);
 
-   FOR i FROM 0 TO v1.length-1 STEP 1  DO
-        FOR j FROM 0 TO v2.length-1 STEP 1 DO
-            ps := ps + v1[i]*v2[j];
-        END_FOR
-    END_FOR
+   REPEAT
+   ps := ps + v1[i]*v2[j];
+   UNTIL (i>50 and j>50)
     
     RETURN ps ;
 END
@@ -69,12 +70,12 @@ END
 ALGORITHM function dot_product
 
 VAR
-    v1,v2: ARRAY_OF INTEGER;
-    ps:INTEGER;
+    v1,v2: ARRAY_OF INTEGER[50];
+    i,j,ps:INTEGER;
 BEGIN
  Read (ps)
- Read (v1)
- Read (v2)
+ Read (v1[i])
+ Read (v2[j])
 
 // read the dot product ps 
 ps:= dot_product()
